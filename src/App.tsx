@@ -1,5 +1,5 @@
-import React from 'react';
-import "./scss/main.scss";
+import { Button } from './components/Button';
+import './scss/main.scss';
 
 function App() {
   return (
@@ -7,6 +7,9 @@ function App() {
       <header>weone</header>
       <div>
         <h1>We One</h1>
+        <Button size="large">
+          hello
+        </Button>
       </div>
     </div>
   );
