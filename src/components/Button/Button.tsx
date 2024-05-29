@@ -15,11 +15,17 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'button--primary' : 'button--secondary';
+
+  const onClick= () => {
+    console.log("Clicked");
+  }
+
   return (
     <button
       type="button"
       className={['button', `button--${size} ${mode}`].join(' ')}
       style={{backgroundColor}}
+      onClick={onClick}
       {...props}
     >
       {props.children}

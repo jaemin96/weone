@@ -1,0 +1,18 @@
+.button {
+    border-radius: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+
+    &--primary {
+        color: $--white;
+        background-color: $--info-400;
+    }
+    &--secondary {
+        color: $--black;
+        background-color: $--white;   
+        border: 1px solid $--cgray-8 !important;
+    }
+
+    &--small{}
+    &--large{}
+}
