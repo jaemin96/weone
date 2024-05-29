@@ -1,7 +1,16 @@
+import { Button } from './components/Button';
+import './scss/main.scss';
+
 function App() {
   return (
     <div className="App">
-      <header>React Template</header>
+      <header>weone</header>
+      <div>
+        <h1>We One</h1>
+        <Button size="large">
+          hello
+        </Button>
+      </div>
     </div>
   );
 }
