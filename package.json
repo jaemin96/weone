@@ -58,6 +58,7 @@
     "test:cover": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
+    "sb": "yarn run storybook",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {
