@@ -1,3 +1,4 @@
+/* ====== Default btn ======= */
 .button {
     border-radius: 0.875rem;
     padding: 0.4rem 0.8rem;
@@ -27,5 +28,15 @@
     }
     &--large{
         font-size: $--dt-f-lg;
+    }
+}
+
+/* ====== Toggle btn ======= */
+
+/* ====== Check btn ======= */
+.checkbox {
+    margin: 0.4rem;
+    input {
+        margin-right: 0.4em;
     }
 }

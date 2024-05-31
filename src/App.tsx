@@ -1,4 +1,4 @@
-import { Button } from './components/Button';
+import { Button, CheckBox } from './components/Button';
 import './scss/main.scss';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Button size="large">
           hello
         </Button>
+        <CheckBox id={"checkbox_1"} label={"체크박스"}/>
       </div>
     </div>
   );
