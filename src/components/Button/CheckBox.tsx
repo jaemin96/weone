@@ -2,14 +2,16 @@ interface CheckBoxProps {
     checked?: boolean;
     label?: string; 
     id: string;
+    onChange?: () => void;
 }
 
-export const CheckBox = ({id, checked, label}: CheckBoxProps) => {
-    const isChecked = checked ? "checked": "";
+export const CheckBox = ({id, checked, label, onChange}: CheckBoxProps) => {
     return (
-        <div className={['checkbox', `checkbox--${isChecked}`].join(' ')}>
-            <input type="checkbox" id={id} name={label} checked={checked} />
-            <label htmlFor={label}>{label}</label>
+        <div className={['checkbox'].join(' ')}>
+            <label htmlFor={label}>
+                <input type="checkbox" id={id} name={label} checked={checked} onChange={onChange}/>
+                {label}
+            </label>
         </div>
     )
 }
