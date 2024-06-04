@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from '../Form';
 import { Input } from '../Input';
+import { Button } from '../Button';
 
 type FormData = {
     email: string;
@@ -16,7 +17,7 @@ const SignIn:React.FC = ()  => {
         <Form<FormData> onSubmit={onSubmit}>
             <Input name="email" label="ID" required/>
             <Input name="password" label="Password" type="password" required/>
-            <button type="submit">Submit</button>
+            <Button>Submit</Button>
         </Form>
     )
 }

@@ -1,4 +1,4 @@
-import {useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 type InputProps = {
     name: string;
@@ -10,7 +10,7 @@ type InputProps = {
 const Input:React.FC<InputProps> = ({ name, label, type = 'text', required = false }) => {
     const { register } = useFormContext();
     return (
-        <fieldset>
+        <fieldset style={{border: "none"}}>
             <label htmlFor={name}>
                 {required && <span style={{ color: "red" }}>*</span>}
                 {label}
