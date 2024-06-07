@@ -7,11 +7,15 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-root.render(
-  <React.StrictMode>
+const rootElement = document.getElementById('root');
+
+if(rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+
+  root.render(
+    <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <App />
@@ -19,5 +23,6 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+}
 
 reportWebVitals();
