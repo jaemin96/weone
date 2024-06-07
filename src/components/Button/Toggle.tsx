@@ -13,7 +13,7 @@ export const Toggle = ({isToggled = false}:ToggleProps) => {
     }
 
     return (
-        <div className={['toggle', `${onOff}`].join(' ')} onClick={handleVisible}>
+        <div className={['toggle', `${onOff}`].join(' ')} onClick={handleVisible} data-testid="toggle">
             <div className="toggle--circle"></div>
         </div>
     )
