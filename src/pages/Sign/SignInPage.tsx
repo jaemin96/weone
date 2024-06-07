@@ -12,7 +12,7 @@ const SignInPage = () => {
         if(isLoggedIn) {
             navigate("/");
         }
-    }, [isLoggedIn]);
+    }, [isLoggedIn, navigate]);
 
     return (
         <div>
