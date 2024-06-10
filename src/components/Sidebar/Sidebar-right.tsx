@@ -1,10 +1,10 @@
 interface SidebarRightProps {
-
+    show?: boolean;
 }
 
-const SidebarRight = () => {
+const SidebarRight = ({show = true}:SidebarRightProps) => {
     return (
-        <aside>
+        <aside className={`aside-right ${show && "aside-right--show"}`}>
             sidebar Right
         </aside>
     )

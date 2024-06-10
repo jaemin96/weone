@@ -4,7 +4,7 @@ interface NavigationProps {
 
 const Navigation = () => {
     return (
-        <nav>
+        <nav className="nav">
             Navigation
         </nav>
     )

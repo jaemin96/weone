@@ -4,9 +4,11 @@ interface HeaderProps {
 
 const Header = () => {
     return (
-        <header>
-            Header
-        </header>
+        <>
+            <header className="header">
+                Header
+            </header>
+        </>
     )
 }
 
