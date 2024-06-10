@@ -13,7 +13,6 @@ const Router = (): ReactElement => {
     <Suspense fallback={<div>loading...</div>}>
       <Routes>
         {/* 로그인 상태에 따른 리다이렉트 설정 */}
-        <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate to="/sign-in" />}/>
 
         {/* Layout 없는 페이지's */}
         <Route path="/sign-in" element={<SignInPage />}/>
@@ -22,7 +21,7 @@ const Router = (): ReactElement => {
 
         {/* Layout 지정된 페이지's */}
         <Route element={<Layout />}>
-          <Route path="/" element={<MainPage />}/>
+          <Route path="/" element={isLoggedIn ? <MainPage /> : <Navigate to="/sign-in" />}/>
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
