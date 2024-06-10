@@ -1,15 +1,21 @@
-import { ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { Navigation } from './Nav';
+import { SidebarLeft, SidebarRight } from './Sidebar';
 
-const Layout = (): ReactElement => {
+const Layout = () => {
   return (
-    <>
-      <header>Weone</header>
-      <main>
+    <div id="layout">
+      <Header />
+      <Navigation />
+      <SidebarLeft show={false}/>
+      <main className="main">
         <Outlet />
       </main>
-      <footer></footer>
-    </>
+      <SidebarRight show={false}/>
+      <Footer />
+    </div>
   );
 };
 
