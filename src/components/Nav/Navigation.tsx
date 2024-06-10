@@ -2,7 +2,7 @@ interface NavigationProps {
 
 }
 
-const Navigation = () => {
+const Navigation = (props: NavigationProps) => {
     return (
         <nav className="nav">
             Navigation

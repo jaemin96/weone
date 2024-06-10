@@ -2,7 +2,7 @@ interface HeaderProps {
 
 }
 
-const Header = () => {
+const Header = (props: HeaderProps) => {
     return (
         <>
             <header className="header">

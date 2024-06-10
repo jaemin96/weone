@@ -2,7 +2,7 @@ interface FooterProps {
 
 }
 
-const Footer = () => {
+const Footer = (props: FooterProps) => {
     return (
         <footer className="footer">
             footer
