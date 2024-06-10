@@ -4,9 +4,9 @@ interface SidebarLeftProps {
 
 const SidebarLeft = () => {
     return (
-        <div>
+        <aside>
             sidebar Left
-        </div>
+        </aside>
     )
 }
 
