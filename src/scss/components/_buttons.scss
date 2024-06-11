@@ -24,10 +24,10 @@
     }
 
     &--small{
-        font-size: $--dt-f-s;
+        font-size: $--f-s;
     }
     &--large{
-        font-size: $--dt-f-lg;
+        font-size: $--f-lg;
     }
 }
 
@@ -40,7 +40,7 @@
     width: 2.5rem;
     height: 1.2rem;
     border-radius: 5rem;
-    font-size: $--dt-f-s;
+    font-size: $--f-s;
     transition: background-color 0.3s;
 
     &--on {

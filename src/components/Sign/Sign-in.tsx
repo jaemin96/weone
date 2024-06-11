@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from '../Form';
 import { Input } from '../Input';
-import { Button } from '../Button';
+import { Button, CheckBox } from '../Button';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/modules/actions/signActions';
 
@@ -12,10 +12,11 @@ type FormData = {
 
 const SignIn: React.FC = () => {
   const dispatch = useDispatch();
+  const [autoLogin, setAutoLogin] = useState<boolean>(false);
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
     const { id, password } = data;
+    console.log({ id, password, autoLogin });
 
     if (id === 'admin' && password === '1234') {
       dispatch(login({ id }));
@@ -24,12 +25,17 @@ const SignIn: React.FC = () => {
     }
   };
 
+  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAutoLogin(event.target.checked);
+  };
+
   return (
-    <Form<FormData> onSubmit={onSubmit}>
-      <Input name="id" label="ID" required />
-      <Input name="password" label="Password" type="password" required />
-      <Button>로그인</Button>
-    </Form>
+      <Form<FormData> onSubmit={onSubmit}>
+        <Input name="id" label="ID" required />
+        <Input name="password" label="Password" type="password" required />
+        <CheckBox id={'auto_login'} label={'로그인 상태 유지'} onChange={handleCheck} />
+        <Button primary>로그인</Button>
+      </Form>
   );
 };
 

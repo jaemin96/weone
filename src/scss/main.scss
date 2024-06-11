@@ -15,6 +15,7 @@
 
 /* layout */
 @import 'layout/grid';
+@import 'layout/sign';
 @import 'layout/header';
 @import 'layout/nav';
 @import 'layout/content';
@@ -22,6 +23,7 @@
 @import 'layout/footer';
 
 /* Pages */
+@import 'pages/signin';
 
 /* Theme */
 @import 'themes/theme';

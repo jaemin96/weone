@@ -5,10 +5,10 @@ import { SignIn } from './Sign';
 import { Form } from './Form';
 
 /* Layout components */
-import Layout from './layout';
+import { Layout, SignLayout } from './Layout';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Navigation } from './Nav';
 import { SidebarLeft, SidebarRight } from './Sidebar';
 
-export { Button, CheckBox, Toggle, Form, Input, SignIn, Layout, Header, Footer, Navigation, SidebarLeft, SidebarRight };
+export { Button, CheckBox, Toggle, Form, Input, SignIn, Layout, SignLayout, Header, Footer, Navigation, SidebarLeft, SidebarRight };
