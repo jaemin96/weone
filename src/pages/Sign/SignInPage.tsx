@@ -15,8 +15,21 @@ const SignInPage = () => {
     }, [isLoggedIn, navigate]);
 
     return (
-        <div>
+        <div id="sign-in">
+            <span className="title">weone</span>
             <SignIn />
+            <ul className="find">
+                <li className="find-id" onClick={() => { navigate("/find-user") }}>아이디 찾기</li>
+                <li className="find-pw" onClick={() => { navigate("/find-user") }}>비밀번호 찾기</li>
+            </ul>
+            <ul className="social">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <span className="create">아직 회원이 아니신가요? 
+                <span className="create-go" onClick={() => { navigate("/sign-up") }}>가입하기</span>
+            </span>
         </div>
     )
 }
