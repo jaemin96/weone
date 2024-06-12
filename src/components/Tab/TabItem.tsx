@@ -37,7 +37,7 @@ export const TabItem = ({
         borderColor
     }
     return (
-        <button className={`tab-item ${isActive ? "active" : ""}`} onClick={() => {onClick(index)}} style={isActive ? tabItemActiveStyle : tabItemInactiveStyle}>
+        <button role={`tabItem-${index+1}`} className={`tab-item ${isActive ? "active" : ""}`} onClick={() => {onClick(index)}} style={isActive ? tabItemActiveStyle : tabItemInactiveStyle}>
             {children}
         </button>
     )

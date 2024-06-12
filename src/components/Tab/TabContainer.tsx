@@ -28,7 +28,7 @@ export const TabContainer = (props: TabContainerProps) => {
     }
 
     return (
-        <div className="tab-container">
+        <div className="tab-container" data-testid="tab">
             <TabMenu borderColor={borderColor}>
                 {React.Children.map(children, (child, index) => {
                     if (React.isValidElement(child)) {
