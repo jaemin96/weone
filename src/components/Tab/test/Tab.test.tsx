@@ -19,13 +19,13 @@ describe("Tab", () => {
     })
 
     test("check init status", () => {
-        const tabItemElement = screen.getByRole('tabItem-1');
+        const tabItemElement = screen.getByTestId('tabItem-1');
         expect(tabItemElement).toHaveClass('active');
     })
 
     test("check tab change", () => {
-        const tabItem1 = screen.getByRole('tabItem-1');
-        const tabItem2 = screen.getByRole('tabItem-2');
+        const tabItem1 = screen.getByTestId('tabItem-1');
+        const tabItem2 = screen.getByTestId('tabItem-2');
 
         fireEvent.click(tabItem2);
         expect(tabItem2).toHaveClass("active");

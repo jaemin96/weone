@@ -6,7 +6,7 @@ interface TabContentProps {
 
 export const TabContent = ({children}: TabContentProps) => {
     return (
-        <div role="tabContent" className="tab-content">
+        <div data-testid="tabContent" className="tab-content">
             {children}
         </div>
     )

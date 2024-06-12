@@ -8,30 +8,30 @@ exports[`Tab snapshot 1`] = `
   >
     <div
       class="tab-menu"
-      role="tabMenu"
+      data-testid="tabMenu"
     >
       <button
         class="tab-item active"
-        role="tabItem-1"
+        data-testid="tabItem-1"
       >
         tab1
       </button>
       <button
         class="tab-item "
-        role="tabItem-2"
+        data-testid="tabItem-2"
       >
         tab2
       </button>
       <button
         class="tab-item "
-        role="tabItem-3"
+        data-testid="tabItem-3"
       >
         tab3
       </button>
     </div>
     <div
       class="tab-content"
-      role="tabContent"
+      data-testid="tabContent"
     >
       <div
         class="tab-panel"

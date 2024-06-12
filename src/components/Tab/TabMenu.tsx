@@ -7,7 +7,7 @@ interface TabMenuProps {
 
 export const TabMenu = ({borderColor, children}: TabMenuProps) => {
     return (
-        <div role="tabMenu" className="tab-menu" style={{borderBottomColor: borderColor}}>
+        <div data-testid="tabMenu" className="tab-menu" style={{borderBottomColor: borderColor}}>
             {children}
         </div>
     )
