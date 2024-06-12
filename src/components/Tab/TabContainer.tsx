@@ -2,10 +2,25 @@ import React, { ReactNode, useState } from 'react';
 import { TabContent, TabItem, TabMenu } from './';
 
 interface TabContainerProps {
+    activeColor?: string;
+    activeBgColor?: string;
+    inactiveColor?: string,
+    inactiveBgColor?: string,
+    fontSize?: string,
+    borderColor?: string,
     children: ReactNode;
 }
 
-export const TabContainer = ({children}: TabContainerProps) => {
+export const TabContainer = (props: TabContainerProps) => {
+    const { 
+        children, 
+        activeColor, 
+        activeBgColor, 
+        inactiveColor, 
+        inactiveBgColor, 
+        fontSize, 
+        borderColor 
+    } = props;
     const [activeTab, setActiveTab] = useState<number>(0);
 
     const handleTab = (index: number) => {
@@ -14,11 +29,17 @@ export const TabContainer = ({children}: TabContainerProps) => {
 
     return (
         <div className="tab-container">
-            <TabMenu>
+            <TabMenu borderColor={borderColor}>
                 {React.Children.map(children, (child, index) => {
                     if (React.isValidElement(child)) {
                         return (
                             <TabItem
+                                activeColor={activeColor}
+                                activeBgColor={activeBgColor}
+                                inactiveColor={inactiveColor}
+                                inactiveBgColor={inactiveBgColor}
+                                borderColor={borderColor}
+                                fontSize={fontSize}
                                 key={index}
                                 index={index}
                                 isActive={index === activeTab}

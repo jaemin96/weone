@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react';
 
 interface TabMenuProps {
+    borderColor?: string,
     children: ReactNode;
 }
 
-export const TabMenu = ({children}: TabMenuProps) => {
+export const TabMenu = ({borderColor, children}: TabMenuProps) => {
     return (
-        <div className="tab-menu">
+        <div className="tab-menu" style={{borderBottomColor: borderColor}}>
             {children}
         </div>
     )
