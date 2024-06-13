@@ -1,7 +1,7 @@
 /* Basic components */
 import { Button, CheckBox, Toggle } from './Button';
 import { Input } from './Input';
-import { SignIn } from './Sign';
+import { SignIn, FindIdByPhone } from './Sign';
 import { Form } from './Form';
 import { TabContainer, TabPanel } from './Tab';
 
@@ -21,6 +21,7 @@ export {
   TabContainer,
   TabPanel,
   SignIn,
+  FindIdByPhone,
   Layout,
   SignLayout,
   Header,
