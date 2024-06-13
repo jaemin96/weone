@@ -3,8 +3,8 @@ import './scss/main.scss';
 
 function App() {
   return (
-    <div className="App" role="main">
-        <Router />
+    <div className="App">
+      <Router />
     </div>
   );
 }

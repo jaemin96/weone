@@ -1,10 +1,10 @@
-/* default */ 
+/* default */
 import ErrorPage from './error-page';
 import MainPage from './main';
 
-/* Sign */ 
+/* Sign */
 import SignInPage from './Sign/SignInPage';
 import SignUpPage from './Sign/SignUpPage';
-import FindUser from './Sign/FindUser';
+import FindUserId from './Sign/FindUserId';
 
-export { ErrorPage, SignInPage, SignUpPage, FindUser, MainPage };
+export { ErrorPage, SignInPage, SignUpPage, FindUserId, MainPage };
