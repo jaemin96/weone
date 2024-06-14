@@ -1,7 +1,5 @@
 #find-id {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include Flex(column, center, "");
 
     .title {
         font-size: $--f-2xlg - 0.3rem;

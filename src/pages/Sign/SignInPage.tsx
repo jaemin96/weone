@@ -19,8 +19,8 @@ const SignInPage = () => {
             <span className="title">weone</span>
             <SignIn />
             <ul className="find">
-                <li className="find-id" onClick={() => { navigate("/find-userId") }}>아이디 찾기</li>
-                <li className="find-pw" onClick={() => { navigate("/find-userPw") }}>비밀번호 찾기</li>
+                <li className="find-id" onClick={() => { navigate("/find-id") }}>아이디 찾기</li>
+                <li className="find-pw" onClick={() => { navigate("/find-password") }}>비밀번호 찾기</li>
             </ul>
             <ul className="social">
                 <li>1</li>
