@@ -34,4 +34,28 @@
             }
         }
     }
+
+    /* 이메일로 찾기 */
+    .find-id-email {
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+
+            .name {}
+
+            .email {}
+
+            .name, .email {
+                @include Flex(row, center, "");
+                gap: 0.3rem;
+
+                .label {
+                    min-width: 4rem;
+                    max-width: 5rem;
+                }
+            }
+        }
+    }
 }
