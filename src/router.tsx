@@ -4,6 +4,7 @@ import { Layout, SignLayout } from './components';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/modules/index';
 import { SignInPage, SignUpPage, FindUserId, MainPage } from './pages';
+import FindUserPassword from './pages/FindUser/FindUserPw';
 
 const ErrorPage = lazy(() => import('./pages/error-page'));
 
@@ -16,7 +17,8 @@ const Router = (): ReactElement => {
         <Route element={<SignLayout />}>
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/find-userId" element={<FindUserId />} />
+          <Route path="/find-id" element={<FindUserId />} />
+          <Route path="/find-password" element={<FindUserPassword />} />
         </Route>
 
         {/* Layout 지정된 페이지's */}
