@@ -1,5 +1,6 @@
 import { useState, ReactElement, ChangeEvent } from 'react';
 import { Input, Button, Form } from '../..';
+import { isValidEmail } from '../../../util';
 
 type FormData = {
   name: string;
@@ -7,11 +8,11 @@ type FormData = {
   isPass: boolean;
 };
 
-interface FindIdByPhoneProps {
+interface FindIdByPhoneEmail {
     
 }
 
-const FindIdByEmail = ({}: FindIdByPhoneProps) => {
+const FindIdByEmail = ({}: FindIdByPhoneEmail) => {
     const [auth, setAuth] = useState<boolean>(false);
     const [email, setEmail] = useState<string>("");
     const [pass, setPass] = useState<boolean>(false);
@@ -26,7 +27,12 @@ const FindIdByEmail = ({}: FindIdByPhoneProps) => {
 
     const onAuth = () => {
         if(email.length !== 0) {
+            if(!isValidEmail(email)) {                
+                return console.log("올바른 이메일 형식이 아닙니다.");
+            }
             setAuth(true);
+
+            window.alert("입력하신 이메일로 인증 메일을 전송하였습니다.");
         }
     }
 
@@ -39,7 +45,7 @@ const FindIdByEmail = ({}: FindIdByPhoneProps) => {
                 </div>
                 <div className="email">
                     <label className="label">이메일</label>
-                    <Input name="email" label="전화번호" required onChange={onChangeEmail}/>
+                    <Input name="email" label="이메일" required onChange={onChangeEmail}/>
                     <Button onClick={onAuth} type="button">{auth ? "재전송" : "인증"}</Button>
                 </div>
                 <Button primary>확인</Button>
