@@ -1,4 +1,4 @@
-import { TabContainer, TabPanel } from '../../components'
+import { FindIdByEmail, TabContainer, TabPanel } from '../../components'
 import { FindIdByPhone } from '../../components';
 
 const FindUserId = () => {
@@ -9,7 +9,9 @@ const FindUserId = () => {
                 <TabPanel label="휴대전화로 찾기">
                     <FindIdByPhone />
                 </TabPanel>
-                <TabPanel label="이메일로 찾기">이메일 전송</TabPanel>
+                <TabPanel label="이메일로 찾기">
+                    <FindIdByEmail />
+                </TabPanel>
             </TabContainer>
         </div>
     )
