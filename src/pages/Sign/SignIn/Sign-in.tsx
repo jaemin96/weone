@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Form } from '../Form';
-import { Input } from '../Input';
-import { Button, CheckBox } from '../Button';
+import { Button, CheckBox, Input, Form } from '../../../components';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/modules/actions/signActions';
+import { login } from '../../../redux/modules/actions/signActions';
 
 type FormData = {
   id: string;

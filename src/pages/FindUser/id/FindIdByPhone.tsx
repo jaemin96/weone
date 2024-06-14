@@ -1,5 +1,5 @@
 import { useState, ReactElement, ChangeEvent } from 'react';
-import { Input, Button, Form } from '../..';
+import { Button, Form, Input } from '../../../components';
 
 type FormData = {
   name: string;
@@ -31,7 +31,8 @@ const FindIdByPhone = ({}: FindIdByPhoneProps) => {
     }
 
     const handlePass = () => {
-
+        console.log("PASS!");
+        setPass(!pass);
     }
 
     return (

@@ -1,5 +1,5 @@
-import { FindIdByEmail, TabContainer, TabPanel } from '../../components'
-import { FindIdByPhone } from '../../components';
+import { TabContainer, TabPanel } from '../../components'
+import { FindIdByPhone, FindIdByEmail } from './id';
 
 const FindUserId = () => {
     return (

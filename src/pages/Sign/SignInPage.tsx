@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import SignIn from '../../components/Sign/Sign-in';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/modules/index';
 import React from 'react';
+import SignIn from './SignIn/Sign-in';
 
 const SignInPage = () => {
     const navigate = useNavigate();

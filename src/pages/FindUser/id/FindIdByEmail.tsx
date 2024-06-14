@@ -1,5 +1,5 @@
 import { useState, ReactElement, ChangeEvent } from 'react';
-import { Input, Button, Form } from '../..';
+import { Input, Button, Form } from '../../../components';
 import { isValidEmail } from '../../../util';
 
 type FormData = {
