@@ -53,7 +53,7 @@ const FindIdByPhone = ({}: FindIdByPhoneProps) => {
                     <Input name="passNumber" label="인증번호" required disabled={auth ? false : true}/>
                     <Button onClick={handlePass} type="button">확인</Button>
                 </div>
-                <Button primary>로그인</Button>
+                <Button primary>확인</Button>
             </Form>
         </div>
     )
