@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { useFormContext } from "react-hook-form";
 
 type InputProps = {
@@ -7,19 +8,22 @@ type InputProps = {
     type?: string;
     className?: string;
     isLabel?: boolean;
+    readOnly?: boolean;
+    disabled?: boolean;
+    placeholder?: string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input:React.FC<InputProps> = ({ name, label, className, isLabel = false, type = 'text', required = false }) => {
+const Input:React.FC<InputProps> = ({ name, label, className, isLabel = false, readOnly=false, disabled=false, type = 'text', placeholder, required = false, onChange}) => {
     const { register } = useFormContext();
     return (
         <fieldset className={className} style={{border: "none"}}>
             {isLabel &&
                 <label htmlFor={name}>
-                    {required && <span style={{ color: "red" }}>*</span>}
                     {label}
                 </label>
             }
-            <input {...register(name, { required })} id={name} type={type}/>
+            <input {...register(name, { required })} id={name} type={type} disabled={disabled} readOnly={readOnly} onChange={onChange} placeholder={placeholder}/>
         </fieldset>
     )
 }

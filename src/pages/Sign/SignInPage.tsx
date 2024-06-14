@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import SignIn from '../../components/Sign/Sign-in';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/modules/index';
 import React from 'react';
+import SignIn from './SignIn/Sign-in';
 
 const SignInPage = () => {
     const navigate = useNavigate();
@@ -19,8 +19,8 @@ const SignInPage = () => {
             <span className="title">weone</span>
             <SignIn />
             <ul className="find">
-                <li className="find-id" onClick={() => { navigate("/find-user") }}>아이디 찾기</li>
-                <li className="find-pw" onClick={() => { navigate("/find-user") }}>비밀번호 찾기</li>
+                <li className="find-id" onClick={() => { navigate("/find-id") }}>아이디 찾기</li>
+                <li className="find-pw" onClick={() => { navigate("/find-password") }}>비밀번호 찾기</li>
             </ul>
             <ul className="social">
                 <li>1</li>

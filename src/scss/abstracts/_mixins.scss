@@ -20,3 +20,10 @@
     }
   }
 }
+
+@mixin Flex($direction: row, $alignItems:normal, $justifyContent:normal) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
