@@ -6,6 +6,6 @@ import MainPage from './main';
 import { SignInPage, SignUpPage } from './Sign';
 
 /* Find User */
-import { FindUserId } from './FindUser';
+import { FindUserId, FindUserPassword } from './FindUser';
 
-export { ErrorPage, SignInPage, SignUpPage, FindUserId, MainPage };
+export { ErrorPage, SignInPage, SignUpPage, FindUserId, FindUserPassword, MainPage };
