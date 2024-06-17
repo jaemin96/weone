@@ -3,6 +3,7 @@ import { Button, CheckBox, Toggle } from './Button';
 import { Input } from './Input';
 import { Form } from './Form';
 import { TabContainer, TabPanel } from './Tab';
+import { Dropdown, DropdownItem } from './Dropdown';
 
 /* Layout components */
 import { Layout, SignLayout } from './Layout';
@@ -19,6 +20,8 @@ export {
   Input,
   TabContainer,
   TabPanel,
+  Dropdown,
+  DropdownItem,
   Layout,
   SignLayout,
   Header,
