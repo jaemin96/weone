@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { DropdownItemProps } from './DropdownItem';
 
 interface DropdownProps {
-  text: string;
+  text?: string;
   children: ReactNode;
 }
 
