@@ -4,6 +4,7 @@ import { Input } from './Input';
 import { Form } from './Form';
 import { TabContainer, TabPanel } from './Tab';
 import { Dropdown, DropdownItem } from './Dropdown';
+import { Group, GroupItem } from './Group';
 
 /* Layout components */
 import { Layout, SignLayout } from './Layout';
@@ -22,6 +23,8 @@ export {
   TabPanel,
   Dropdown,
   DropdownItem,
+  Group,
+  GroupItem,
   Layout,
   SignLayout,
   Header,
