@@ -3,10 +3,11 @@ import { GroupItemProps } from './GroupItem';
 
 interface DropdownProps {
   defaultText: string;
+  className?: string;
   children: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-const Group = ({ children, defaultText }: DropdownProps) => {
+const Group = ({ children, defaultText, className }: DropdownProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
 
@@ -20,7 +21,7 @@ const Group = ({ children, defaultText }: DropdownProps) => {
   }
 
   return (
-    <div className="group">
+    <div className={['group', `${className}`].join(' ')}>
       <label className="group-label" onClick={handleOpen}>{selected}</label>
       {isOpen && (
         <ul className="group-items">
