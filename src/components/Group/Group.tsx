@@ -1,15 +1,17 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useRef } from 'react';
 import { GroupItemProps } from './GroupItem';
 
-interface DropdownProps {
+interface GroupProps {
   defaultText: string;
-  className?: string;
+  className?: string | "";
+  type?: "button" | "label";
   children: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-const Group = ({ children, defaultText, className }: DropdownProps) => {
+const Group = ({ children, defaultText, className = "", type = "button" }: GroupProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
+  const groupRef = useRef<HTMLDivElement>(null)
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -20,9 +22,22 @@ const Group = ({ children, defaultText, className }: DropdownProps) => {
     setIsOpen(false);
   }
 
+  // [핸들러](그룹 리스트가 열려 있을 경우) 외부 영역 클릭 시 리스트 선택창 닫기
+  const handleOutsideClick = (event: MouseEvent) => {
+    const { target } = event;
+    if(isOpen && groupRef.current && !groupRef.current.contains(target as Node)) setIsOpen(false);
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      window.removeEventListener("mousedown", handleOutsideClick);
+    }
+  }, [])
+
   return (
-    <div className={['group', `${className}`].join(' ')}>
-      <label className="group-label" onClick={handleOpen}>{selected}</label>
+    <div ref={groupRef} className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
+      <label className="group-label">{selected}</label>
       {isOpen && (
         <ul className="group-items">
           {React.Children.map(children, (child) => {
