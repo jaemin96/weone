@@ -11,7 +11,7 @@ interface GroupProps {
 const Group = ({ children, defaultText, className = "", type = "button" }: GroupProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
-  const groupRef = useRef<HTMLUListElement>(null)
+  const groupRef = useRef<HTMLDivElement>(null)
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -36,10 +36,10 @@ const Group = ({ children, defaultText, className = "", type = "button" }: Group
   }, [isOpen])
 
   return (
-    <div className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
+    <div ref={groupRef} className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
       <label className="group-label">{selected}</label>
       {isOpen && (
-        <ul ref={groupRef} className="group-items">
+        <ul className="group-items">
           {React.Children.map(children, (child) => {
             if (React.isValidElement<GroupItemProps>(child)) {
               return React.cloneElement(child, { onSelect: handleSelect });
