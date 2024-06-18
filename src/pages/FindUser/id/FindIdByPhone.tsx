@@ -7,11 +7,7 @@ type FormData = {
   isPass: boolean;
 };
 
-interface FindIdByPhoneProps {
-    
-}
-
-const FindIdByPhone = ({}: FindIdByPhoneProps) => {
+const FindIdByPhone = () => {
     const [auth, setAuth] = useState<boolean>(false);
     const [phone, setPhone] = useState<string>("");
     const [pass, setPass] = useState<boolean>(false);

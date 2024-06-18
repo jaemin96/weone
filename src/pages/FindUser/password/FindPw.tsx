@@ -5,11 +5,7 @@ type FormData = {
   email: string;
 };
 
-interface FindPasswordProps {
-    
-}
-
-const FindPassword = ({}: FindPasswordProps) => {
+const FindPassword = () => {
     const onSubmit = (data: FormData) => {
         console.log({data});
     }

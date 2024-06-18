@@ -1,8 +1,4 @@
-interface NavigationProps {
-
-}
-
-const Navigation = (props: NavigationProps) => {
+const Navigation = () => {
     return (
         <nav className="nav">
             Navigation

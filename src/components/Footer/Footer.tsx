@@ -1,8 +1,4 @@
-interface FooterProps {
-
-}
-
-const Footer = (props: FooterProps) => {
+const Footer = () => {
     return (
         <footer className="footer">
             footer

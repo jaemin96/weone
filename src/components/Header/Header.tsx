@@ -1,8 +1,4 @@
-interface HeaderProps {
-
-}
-
-const Header = (props: HeaderProps) => {
+const Header = () => {
     return (
         <>
             <header className="header">

@@ -1,4 +1,4 @@
-import { useState, ReactElement, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { Input, Button, Form } from '../../../components';
 import { isValidEmail } from '../../../util';
 
@@ -8,14 +8,9 @@ type FormData = {
   isPass: boolean;
 };
 
-interface FindIdByEmailProps {
-    
-}
-
-const FindIdByEmail = ({}: FindIdByEmailProps) => {
+const FindIdByEmail = () => {
     const [auth, setAuth] = useState<boolean>(false);
     const [email, setEmail] = useState<string>("");
-    const [pass, setPass] = useState<boolean>(false);
     
     const onSubmit = (data: FormData) => {
         console.log({data});

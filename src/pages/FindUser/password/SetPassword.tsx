@@ -5,11 +5,7 @@ type FormData = {
   passwordConfirm: string;
 };
 
-interface SetPasswordProps {
-    
-}
-
-const SetPassword = ({}: SetPasswordProps) => {
+const SetPassword = () => {
     const onSubmit = (data: FormData) => {
         console.log({data});
     }
