@@ -11,7 +11,7 @@ interface GroupProps {
 const Group = ({ children, defaultText, className = "", type = "button" }: GroupProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
-  const groupRef = useRef<HTMLDivElement>(null)
+  const groupRef = useRef<HTMLUListElement>(null)
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -25,21 +25,21 @@ const Group = ({ children, defaultText, className = "", type = "button" }: Group
   // [핸들러](그룹 리스트가 열려 있을 경우) 외부 영역 클릭 시 리스트 선택창 닫기
   const handleOutsideClick = (event: MouseEvent) => {
     const { target } = event;
-    if(isOpen && groupRef.current && !groupRef.current.contains(target as Node)) setIsOpen(false);
+    if(isOpen && groupRef?.current && !groupRef.current.contains(target as Node)) setIsOpen(false);
   }
 
   React.useEffect(() => {
-    window.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("mousedown", handleOutsideClick);
     return () => {
-      window.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick);
     }
-  }, [])
+  }, [isOpen])
 
   return (
-    <div ref={groupRef} className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
+    <div className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
       <label className="group-label">{selected}</label>
       {isOpen && (
-        <ul className="group-items">
+        <ul ref={groupRef} className="group-items">
           {React.Children.map(children, (child) => {
             if (React.isValidElement<GroupItemProps>(child)) {
               return React.cloneElement(child, { onSelect: handleSelect });
