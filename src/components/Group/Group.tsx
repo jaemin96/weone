@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react';
+import React, { ReactElement } from 'react';
 import { GroupItemProps } from './GroupItem';
 
 interface DropdownProps {
   defaultText: string;
-  children: ReactNode;
+  children: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
 const Group = ({ children, defaultText }: DropdownProps) => {
@@ -26,9 +26,9 @@ const Group = ({ children, defaultText }: DropdownProps) => {
         <ul className="group-items">
           {React.Children.map(children, (child) => {
             if (React.isValidElement<GroupItemProps>(child)) {
-              return React.cloneElement(child, {onSelect: handleSelect});
+              return React.cloneElement(child, { onSelect: handleSelect });
             }
-            return null;
+            return child;
           })}
         </ul>
       )}

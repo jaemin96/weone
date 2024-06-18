@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from 'react';
-import { Button, Form, Input } from '../../../components';
+import { Button, Form, Group, GroupItem, Input } from '../../../components';
 
 type FormData = {
   name: string;
@@ -39,9 +39,12 @@ const FindIdByPhone = () => {
                     <Input name="name" label="이름" required />
                 </div>
                 <div className="phone-number">
-                    {/* TODO: 통신사 드롭다운 */}
                     <label className="label">휴대전화</label>
-                    <button style={{border: "1px solid black", width:"2.5rem", height:"auto"}}>v</button>
+                    <Group defaultText='SKT'>
+                        <GroupItem value='SKT'>SKT</GroupItem>
+                        <GroupItem value='KT'>KT</GroupItem>
+                        <GroupItem value='LG'>LG</GroupItem>
+                    </Group>
                     <Input name="phoneNumber" label="전화번호" required onChange={onChangePhone}/>
                     <Button onClick={onAuth} type="button">{auth ? "다시받기" : "인증"}</Button>
                 </div>
