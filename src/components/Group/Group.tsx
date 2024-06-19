@@ -33,6 +33,7 @@ const Group = ({ children, defaultText, className = '', type = 'button' }: Group
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
+    // eslint-disable-next-line
   }, [isOpen]);
 
   return (
