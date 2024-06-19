@@ -11,7 +11,7 @@ export const store = createStore(rootReducer);
 
 const rootElement = document.getElementById('root');
 
-if(rootElement) {
+if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
 
   root.render(

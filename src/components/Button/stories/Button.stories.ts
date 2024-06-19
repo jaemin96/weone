@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
     layout: 'centered',
-    pseudo: { hover: true },  
+    pseudo: { hover: true },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -26,7 +26,7 @@ export const Primary: Story = {
     children: 'click',
   },
   parameters: {
-    pseudo: { hover: true },  
+    pseudo: { hover: true },
   },
 };
 
@@ -36,7 +36,7 @@ export const Large: Story = {
     children: 'click',
   },
   parameters: {
-    pseudo: { hover: true },  
+    pseudo: { hover: true },
   },
 };
 
@@ -46,6 +46,6 @@ export const Small: Story = {
     children: 'click',
   },
   parameters: {
-    pseudo: { hover: true },  
+    pseudo: { hover: true },
   },
 };

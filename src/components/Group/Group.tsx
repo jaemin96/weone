@@ -3,15 +3,15 @@ import { GroupItemProps } from './GroupItem';
 
 interface GroupProps {
   defaultText: string;
-  className?: string | "";
-  type?: "button" | "label";
+  className?: string | '';
+  type?: 'button' | 'label';
   children: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
 }
 
-const Group = ({ children, defaultText, className = "", type = "button" }: GroupProps) => {
+const Group = ({ children, defaultText, className = '', type = 'button' }: GroupProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
-  const groupRef = useRef<HTMLDivElement>(null)
+  const groupRef = useRef<HTMLDivElement>(null);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -20,20 +20,20 @@ const Group = ({ children, defaultText, className = "", type = "button" }: Group
   const handleSelect = (value: string) => {
     setSelected(value);
     setIsOpen(false);
-  }
+  };
 
   // [핸들러](그룹 리스트가 열려 있을 경우) 외부 영역 클릭 시 리스트 선택창 닫기
   const handleOutsideClick = (event: MouseEvent) => {
     const { target } = event;
-    if(isOpen && groupRef?.current && !groupRef.current.contains(target as Node)) setIsOpen(false);
-  }
+    if (isOpen && groupRef?.current && !groupRef.current.contains(target as Node)) setIsOpen(false);
+  };
 
   React.useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    }
-  }, [isOpen])
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isOpen]);
 
   return (
     <div ref={groupRef} className={['group', `group-${type}`, `${className}`].join(' ')} onClick={handleOpen}>
