@@ -15,7 +15,9 @@ const Dropdown = ({ text, children }: DropdownProps) => {
 
   return (
     <div className="dropdown">
-      <label className="dropdown-label" onClick={handleDrop}>{text}</label>
+      <label className="dropdown-label" onClick={handleDrop}>
+        {text}
+      </label>
       {isDrop && (
         <ul className="dropdown-item">
           {React.Children.map(children, (child) => {

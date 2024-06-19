@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TabContainer, TabPanel } from '../';
 
-type TabContainerArgs = React.ComponentProps<typeof TabContainer>
+type TabContainerArgs = React.ComponentProps<typeof TabContainer>;
 
 const meta: Meta<TabContainerArgs> = {
   title: 'Components/Tab',
   component: TabContainer,
   parameters: {
     layout: 'centered',
-    pseudo: { hover: true },  
+    pseudo: { hover: true },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -19,7 +19,6 @@ const meta: Meta<TabContainerArgs> = {
     fontSize: { control: 'text' },
     borderColor: { control: 'color' },
   },
-  
 };
 
 export default meta;
@@ -36,11 +35,11 @@ export const Default: Story = {
     );
   },
   args: {
-    activeColor: "#6690ff",
-    activeBgColor: "#fdfdfd",
-    inactiveColor: "#878075",
-    inactiveBgColor: "#cbc8c4",
-    fontSize: "16px",
-    borderColor: "#878075"
+    activeColor: '#6690ff',
+    activeBgColor: '#fdfdfd',
+    inactiveColor: '#878075',
+    inactiveBgColor: '#cbc8c4',
+    fontSize: '16px',
+    borderColor: '#878075',
   },
 };

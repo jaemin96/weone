@@ -6,27 +6,27 @@ import { RootState } from '../redux/modules/index';
 import React from 'react';
 
 const MainPage = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const user = useSelector((state:RootState) => state.sign.user);
-    
-    const handleLogout = () => {
-        dispatch(logout());
-        navigate("/sign-in");
-    }
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.sign.user);
 
-    React.useEffect(() => {
-        console.log({user});
-    },[user])
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/sign-in');
+  };
 
-    return (
-        <div>
-            MainPage
-            <Button onClick={handleLogout}>로그아웃</Button>
-            <CheckBox id="check__1" label="동의"/>
-            <Toggle />
-        </div>
-    )
-}
+  React.useEffect(() => {
+    console.log({ user });
+  }, [user]);
+
+  return (
+    <div>
+      MainPage
+      <Button onClick={handleLogout}>로그아웃</Button>
+      <CheckBox id="check__1" label="동의" />
+      <Toggle />
+    </div>
+  );
+};
 
 export default MainPage;

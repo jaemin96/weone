@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 
 interface ToggleProps {
-    isToggled?: boolean;
+  isToggled?: boolean;
 }
 
-export const Toggle = ({isToggled = false}:ToggleProps) => {
-    const [visible, setVisible] = React.useState(isToggled);
-    const onOff = visible ? "toggle--on" : "toggle--off";
+export const Toggle = ({ isToggled = false }: ToggleProps) => {
+  const [visible, setVisible] = React.useState(isToggled);
+  const onOff = visible ? 'toggle--on' : 'toggle--off';
 
-    const handleVisible = () => {
-        setVisible(!visible);
-    }
+  const handleVisible = () => {
+    setVisible(!visible);
+  };
 
-    return (
-        <div className={['toggle', `${onOff}`].join(' ')} onClick={handleVisible} data-testid="toggle">
-            <div className="toggle--circle"></div>
-        </div>
-    )
-}
+  return (
+    <div className={['toggle', `${onOff}`].join(' ')} onClick={handleVisible} data-testid="toggle">
+      <div className="toggle--circle"></div>
+    </div>
+  );
+};

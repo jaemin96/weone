@@ -9,11 +9,11 @@ const Layout = () => {
     <div id="layout">
       <Header />
       <Navigation />
-      <SidebarLeft show={false}/>
+      <SidebarLeft show={false} />
       <main className="main">
         <Outlet />
       </main>
-      <SidebarRight show={false}/>
+      <SidebarRight show={false} />
       <Footer />
     </div>
   );

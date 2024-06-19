@@ -1,59 +1,67 @@
 #find-id {
-    @include Flex(column, center, "");
+  @include Flex(column, center, '');
 
-    .title {
-        font-size: $--f-2xlg - 0.3rem;
-        font-weight: 700;
-        margin: 1rem 1rem 2.5rem;
-    }
+  .title {
+    font-size: $--f-2xlg - 0.3rem;
+    font-weight: 700;
+    margin: 1rem 1rem 2.5rem;
+  }
 
-    /* 휴대전화로 찾기 */
-    .find-id-phone {
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
+  /* 휴대전화로 찾기 */
+  .find-id-phone {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
 
-            .name {}
+      .name {
+      }
 
-            .phone-number {}
+      .phone-number {
+      }
 
-            .pass-number {}
+      .pass-number {
+      }
 
-            .name, .phone-number, .pass-number {
-                @include Flex(row, center, "");
-                gap: 0.3rem;
+      .name,
+      .phone-number,
+      .pass-number {
+        @include Flex(row, center, '');
+        gap: 0.3rem;
 
-                .label {
-                    min-width: 4rem;
-                    max-width: 5rem;
-                }
-            }
+        .label {
+          min-width: 4rem;
+          max-width: 5rem;
         }
+      }
     }
+  }
 
-    /* 이메일로 찾기 */
-    .find-id-email {
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
+  /* 이메일로 찾기 */
+  .find-id-email {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
 
-            .name {}
+      .name {
+      }
 
-            .email {}
+      .email {
+      }
 
-            .name, .email {
-                @include Flex(row, center, "");
-                gap: 0.3rem;
+      .name,
+      .email {
+        @include Flex(row, center, '');
+        gap: 0.3rem;
 
-                .label {
-                    min-width: 4rem;
-                    max-width: 5rem;
-                }
-            }
+        .label {
+          min-width: 4rem;
+          max-width: 5rem;
         }
+      }
     }
+  }
 }
