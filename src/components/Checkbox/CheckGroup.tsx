@@ -50,7 +50,7 @@ export const CheckGroup = ({id, label, children}: CheckGroupProps) => {
      * 자식 체크요소가 변경될 때마다 allChecked 상태 검사
      */
     useEffect(() => {
-        const allChecked = Object.values(childChecked).every(checked => checked);
+        const allChecked = Object.keys(childChecked).length > 0 && Object.values(childChecked).every(checked => checked);
         setIsCheckedAll(allChecked);
     }, [childChecked]);
 
