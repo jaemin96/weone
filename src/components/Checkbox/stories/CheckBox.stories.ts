@@ -1,4 +1,4 @@
-import { CheckBox } from '../CheckBox';
+import { CheckBox } from '../';
 import type { Meta, StoryObj } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 

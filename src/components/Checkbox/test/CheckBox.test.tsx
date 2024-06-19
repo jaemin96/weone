@@ -1,5 +1,5 @@
-import { CheckBox } from '../CheckBox';
-import { render,screen,fireEvent } from '@testing-library/react';
+import { render,screen } from '@testing-library/react';
+import { CheckBox } from '../';
 
 describe("Check-box", () => {
     test("render checkbox", () => {
