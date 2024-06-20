@@ -1,65 +1,65 @@
 #sign-in {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  .title {
+    font-weight: 800;
+    font-size: $--f-3xlg;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .find {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
     align-items: center;
+    list-style: none;
 
-    .title {
-        font-weight: 800;
-        font-size: $--f-3xlg;
+    li {
+      cursor: pointer;
+      color: $--cgray-7;
+      &:hover {
+        color: $--black;
+      }
     }
 
-    .button {
-        width: 100%;
+    li:not(:last-child)::after {
+      cursor: default;
+      content: '|';
+      padding: 0.6rem;
+      color: $--cgray-3;
+      font-weight: 800;
+      font-size: $--f-s;
     }
+  }
 
-    .find {
-        display: flex;
-        align-items: center;
-        list-style: none;
+  .social {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
 
-        li {
-            cursor: pointer;
-            color: $--cgray-7;
-            &:hover {
-                color: $--black;
-            }
-        }
-
-        li:not(:last-child)::after {
-            cursor: default;
-            content: "|";
-            padding: 0.6rem;
-            color: $--cgray-3;
-            font-weight: 800;
-            font-size: $--f-s;
-        }
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $--wgray-3;
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
     }
+  }
 
-    .social {
-        display: flex;
-        gap: 0.5rem;
-        list-style: none;
-
-        li {
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $--wgray-3;
-            border-radius: 50%;
-            width: 2.5rem;
-            height: 2.5rem;
-        }
+  .create {
+    &-go {
+      cursor: pointer;
+      color: $--info-500;
+      &:hover {
+        color: $--info-300;
+      }
     }
-
-    .create {
-        &-go {
-            cursor: pointer;
-            color: $--info-500;
-            &:hover {
-                color: $--info-300;
-            }
-        }
-    }
+  }
 }

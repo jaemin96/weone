@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Form } from '../Form';
-import { Input } from '../Input';
-import { Button, CheckBox } from '../Button';
+import { Button, CheckBox, Input, Form } from '../../../components';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/modules/actions/signActions';
+import { login } from '../../../redux/modules/actions/signActions';
 
 type FormData = {
   id: string;
@@ -30,12 +28,12 @@ const SignIn: React.FC = () => {
   };
 
   return (
-      <Form<FormData> onSubmit={onSubmit}>
-        <Input name="id" label="ID" required />
-        <Input name="password" label="Password" type="password" required />
-        <CheckBox id={'auto_login'} label={'로그인 상태 유지'} onChange={handleCheck} />
-        <Button primary>로그인</Button>
-      </Form>
+    <Form<FormData> onSubmit={onSubmit}>
+      <Input name="id" label="ID" required />
+      <Input name="password" label="Password" type="password" required />
+      <CheckBox id={'auto_login'} label={'로그인 상태 유지'} onChange={handleCheck} />
+      <Button primary>로그인</Button>
+    </Form>
   );
 };
 

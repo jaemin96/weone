@@ -62,7 +62,8 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "sb": "yarn run storybook",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prettier": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": [

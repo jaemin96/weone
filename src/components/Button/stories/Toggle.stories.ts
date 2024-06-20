@@ -17,12 +17,12 @@ type Story = StoryObj<typeof meta>;
 
 export const OFF: Story = {
   args: {
-      isToggled:false,
+    isToggled: false,
   },
 };
 
 export const ON: Story = {
   args: {
-      isToggled:true,
+    isToggled: true,
   },
 };

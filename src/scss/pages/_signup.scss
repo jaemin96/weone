@@ -1,0 +1,37 @@
+#sign-up {
+  @include Flex(column, center, '');
+
+  .title {
+    font-size: $--f-2xlg - 0.3rem;
+    font-weight: 700;
+    margin: 1rem 1rem 2.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    .name {
+    }
+
+    .phone-number {
+    }
+
+    .pass-number {
+    }
+
+    .name,
+    .phone-number,
+    .pass-number {
+      @include Flex(row, center, '');
+      gap: 0.3rem;
+
+      .label {
+        min-width: 4rem;
+        max-width: 5rem;
+      }
+    }
+  }
+}

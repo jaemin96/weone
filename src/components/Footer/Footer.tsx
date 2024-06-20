@@ -1,13 +1,5 @@
-interface FooterProps {
-
-}
-
-const Footer = (props: FooterProps) => {
-    return (
-        <footer className="footer">
-            footer
-        </footer>
-    )
-}
+const Footer = () => {
+  return <footer className="footer">footer</footer>;
+};
 
 export default Footer;

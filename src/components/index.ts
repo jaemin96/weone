@@ -1,9 +1,11 @@
 /* Basic components */
-import { Button, CheckBox, Toggle } from './Button';
+import { Button, Toggle } from './Button';
 import { Input } from './Input';
-import { SignIn } from './Sign';
 import { Form } from './Form';
 import { TabContainer, TabPanel } from './Tab';
+import { Dropdown, DropdownItem } from './Dropdown';
+import { Group, GroupItem } from './Group';
+import { CheckBox, CheckGroup } from './Checkbox';
 
 /* Layout components */
 import { Layout, SignLayout } from './Layout';
@@ -16,11 +18,15 @@ export {
   Button,
   CheckBox,
   Toggle,
+  CheckGroup,
   Form,
   Input,
   TabContainer,
   TabPanel,
-  SignIn,
+  Dropdown,
+  DropdownItem,
+  Group,
+  GroupItem,
   Layout,
   SignLayout,
   Header,
