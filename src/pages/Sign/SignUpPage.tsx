@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Button, CheckBox, CheckGroup, Form, Group, GroupItem, Input } from '../../components';
+import { Button, CheckBox, CheckGroup, Form, Group, Input } from '../../components';
 
 type FormData = {
   name: string;
@@ -52,11 +52,7 @@ const SignUpPage = () => {
         </div>
         <div className="phone-number">
           <label className="label">휴대전화</label>
-          <Group defaultText="SKT">
-            <GroupItem value="SKT">SKT</GroupItem>
-            <GroupItem value="KT">KT</GroupItem>
-            <GroupItem value="LG">LG</GroupItem>
-          </Group>
+          <Group defaultText="SKT" items={['SKT', 'KT', 'LG']} />
           <Input name="phoneNumber" label="전화번호" required onChange={onChangePhone} />
           <Button onClick={onAuth} type="button">
             {auth ? '다시받기' : '인증'}
