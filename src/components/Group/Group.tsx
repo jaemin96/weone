@@ -1,14 +1,13 @@
-import React, { ReactElement, useRef } from 'react';
-import { GroupItemProps } from './GroupItem';
+import React, { useRef } from 'react';
 
 interface GroupProps {
   defaultText: string;
   className?: string | '';
   type?: 'button' | 'label';
-  children: ReactElement<GroupItemProps> | ReactElement<GroupItemProps>[];
+  items: string[];
 }
 
-const Group = ({ children, defaultText, className = '', type = 'button' }: GroupProps) => {
+const Group = ({ defaultText, className = '', type = 'button', items }: GroupProps) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>(defaultText);
   const groupRef = useRef<HTMLDivElement>(null);
@@ -41,11 +40,12 @@ const Group = ({ children, defaultText, className = '', type = 'button' }: Group
       <label className="group-label">{selected}</label>
       {isOpen && (
         <ul className="group-items">
-          {React.Children.map(children, (child) => {
-            if (React.isValidElement<GroupItemProps>(child)) {
-              return React.cloneElement(child, { onSelect: handleSelect });
-            }
-            return child;
+          {items?.map((item, index) => {
+            return (
+              <li key={item} className="group-items-item" onClick={() => handleSelect(item)}>
+                {item}
+              </li>
+            );
           })}
         </ul>
       )}
