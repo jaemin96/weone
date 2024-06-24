@@ -4,6 +4,7 @@ import { logout } from '../redux/modules/actions/signActions';
 import { Button, CheckBox, Toggle } from '../components';
 import { RootState } from '../redux/modules/index';
 import React from 'react';
+import { ThemeSwitch } from '../components';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const MainPage = () => {
       <Button onClick={handleLogout}>로그아웃</Button>
       <CheckBox id="check__1" label="동의" />
       <Toggle />
+      <ThemeSwitch />
     </div>
   );
 };
