@@ -4,7 +4,7 @@ import { logout } from '../redux/modules/actions/signActions';
 import { Button, CheckBox, Toggle } from '../components';
 import { RootState } from '../redux/modules/index';
 import React from 'react';
-import ThemeSwitch from '../components/Theme/ThemeSwitch';
+import { ThemeSwitch } from '../components';
 
 const MainPage = () => {
   const navigate = useNavigate();
