@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './apollo';
 
 export const store = createStore(rootReducer);
 
@@ -16,11 +18,13 @@ if (rootElement) {
 
   root.render(
     <React.StrictMode>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>
+      <ApolloProvider client={client}>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </ApolloProvider>
     </React.StrictMode>
   );
 }

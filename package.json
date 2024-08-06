@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "^18.18.0",
+    "node": "^20.11.1",
     "yarn": "^1.22.18",
-    "npm": "^9.6.0"
+    "npm": "^10.2.4"
   },
   "dependencies": {
+    "@apollo/client": "^3.11.1",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.97",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "graphql": "^16.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.51.5",
@@ -52,10 +54,16 @@
     "prop-types": "^15.8.1",
     "storybook": "^8.1.4",
     "storybook-addon-pseudo-states": "^3.1.1",
-    "webpack": "^5.91.0"
+    "webpack": "^5.91.0",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "codegen": "graphql-codegen",
+    "prebuild": "yarn run codegen",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cover": "react-scripts test --coverage --watchAll",

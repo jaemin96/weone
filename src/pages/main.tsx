@@ -5,6 +5,7 @@ import { Button, CheckBox, Toggle } from '../components';
 import { RootState } from '../redux/modules/index';
 import React from 'react';
 import { ThemeSwitch } from '../components';
+import { useGetAllUserQuery } from '../generated/graphql';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -19,6 +20,13 @@ const MainPage = () => {
   React.useEffect(() => {
     console.log({ user });
   }, [user]);
+
+  const { loading, error, data } = useGetAllUserQuery();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error : {error.message}</p>;
+
+  console.log({ data });
 
   return (
     <div>
