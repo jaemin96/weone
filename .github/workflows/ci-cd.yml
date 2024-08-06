@@ -27,6 +27,10 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      # Graphql Code Generator
+      - name: Generate GraphQL types
+        run: yarn run codegen
+
       # 빌드
       - name: Build
         run: yarn build

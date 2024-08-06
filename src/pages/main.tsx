@@ -5,7 +5,7 @@ import { Button, CheckBox, Toggle } from '../components';
 import { RootState } from '../redux/modules/index';
 import React from 'react';
 import { ThemeSwitch } from '../components';
-import { gql, useQuery } from '@apollo/client';
+import { useGetAllUserQuery } from '../generated/graphql';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -21,22 +21,12 @@ const MainPage = () => {
     console.log({ user });
   }, [user]);
 
-  const GET_ALL_USER = gql` 
-    query {
-      getAllUsers {
-        id
-        email
-        name
-      }
-    }
-  `;
-
-  const { loading, error, data } = useQuery(GET_ALL_USER);
+  const { loading, error, data } = useGetAllUserQuery();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  console.log({data});
+  console.log({ data });
 
   return (
     <div>

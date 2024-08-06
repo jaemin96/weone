@@ -54,10 +54,16 @@
     "prop-types": "^15.8.1",
     "storybook": "^8.1.4",
     "storybook-addon-pseudo-states": "^3.1.1",
-    "webpack": "^5.91.0"
+    "webpack": "^5.91.0",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.9",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "codegen": "graphql-codegen",
+    "prebuild": "yarn run codegen",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cover": "react-scripts test --coverage --watchAll",
